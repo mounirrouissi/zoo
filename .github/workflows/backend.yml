@@ -23,7 +23,7 @@ jobs:
         distribution: 'adopt'
 
     - name: Change to backend directory
-      run: cd ./ng
+      run: cd ng
 
     - name: Build with Maven
       run: mvn clean package
