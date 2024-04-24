@@ -51,7 +51,7 @@ jobs:
           file: ng/Dockerfile
           push: true
           platforms: linux/amd64
-           tags: ${{ secrets.DOCKERHUB_USERNAME }}/animals-api:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/animals-api:latest
       - name: Build & Push to DockerHub
         uses: docker/build-push-action@v5
     
