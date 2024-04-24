@@ -6,8 +6,6 @@ on:
       - master
     paths:
       - ng/**
-      - .github/workflows/*
-
 jobs:
   compile:
     name: Compile project
