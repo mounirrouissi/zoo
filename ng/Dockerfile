@@ -10,5 +10,4 @@ COPY target/animals-app.jar /app/app.jar
 # Expose port 8080 for the application
 EXPOSE 8080
 
-# Run the application
 CMD ["java", "-jar", "/app/app.jar"]
