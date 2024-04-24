@@ -12,7 +12,7 @@ on:
 jobs:
  compile:
     name: Compile project
-    runs-on: ubuntu-latest # Add this line
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -29,16 +29,23 @@ jobs:
         run: |
           cd ng
           mvn clean compile
+
  build-image:
     name: Build Docker image
-    runs-on: ubuntu-latest # Add this line
+    runs-on: ubuntu-latest
     needs: [compile]
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Setup JDK
         uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'corretto'
+
       - name: Login to DockerHub
         uses: docker/login-action@v3
         with:
@@ -48,11 +55,8 @@ jobs:
       - name: Build & Push to DockerHub
         uses: docker/build-push-action@v5
         with:
-          context: zoo/ng
-          file: zoo/ng/Dockerfile
+          context: ng
+          file: ng/Dockerfile
           push: true
           platforms: linux/amd64
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/animals-api:latest
-      - name: Build & Push to DockerHub
-        uses: docker/build-push-action@v5
-    
