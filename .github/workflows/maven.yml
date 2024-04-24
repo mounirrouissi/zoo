@@ -28,7 +28,7 @@ jobs:
       - name: Running Unit Tests
         run: |
           cd ng
-          mvn clean compile
+          mvn clean package
 
  build-image:
     name: Build Docker image
