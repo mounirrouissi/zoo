@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  db:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_DB: paint
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+  backend:
+    image: mounirr/animals-app
+    #build: ./backend
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/paint
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+  frontend:
+    image: mounirr/my-angular-app
+    
+    ports:
+      - "4200:8080"
+    depends_on:
+      - backend
