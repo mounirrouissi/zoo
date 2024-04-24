@@ -8,6 +8,7 @@ on:
       - 'ng/**'
       - './ng/**'
       - '../ng/**'
+      - '/home/runner/work/zoo/zoo/ng/**'
 
 jobs:
  build:
