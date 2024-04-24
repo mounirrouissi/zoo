@@ -42,7 +42,7 @@ jobs:
 
       - name: Running Unit Tests
         run: |
-          cd book-network
+          cd ng
           ./mvnw clean test
   build:
     name: Build backend
@@ -61,5 +61,5 @@ jobs:
 
       - name: Compile project
         run: |
-          cd book-network
+          cd ng
           ./mvnw clean compile
