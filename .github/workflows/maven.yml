@@ -5,6 +5,7 @@ on:
     branches:
       - master
     paths:
+      - ng/*
       - ng/**
       - .github/*
 jobs:
