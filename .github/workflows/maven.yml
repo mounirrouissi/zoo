@@ -29,8 +29,7 @@ jobs:
         run: |
           cd ng
           mvn clean compile
-
-build-image:
+ build-image:
     name: Build Docker image
     runs-on: ubuntu-latest # Add this line
     needs: [compile]
