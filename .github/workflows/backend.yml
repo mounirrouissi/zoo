@@ -3,7 +3,7 @@ name: Spring CI/CD
 on:
  push:
     branches:
-      - main
+      - master
     paths:
       - 'ng/**'
       - './ng/**'
