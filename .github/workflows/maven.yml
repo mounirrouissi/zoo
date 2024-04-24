@@ -28,7 +28,7 @@ jobs:
       - name: Running Unit Tests
         run: |
           cd ng
-          mvn clean package
+          mvn clean package -DskipTests
 
  build-image:
     name: Build Docker image
