@@ -27,7 +27,7 @@ jobs:
 
       - name: Running Unit Tests
         run: |
-          cd book-network
+          cd ng
           ./mvnw clean compile
 
  unit-tests:
