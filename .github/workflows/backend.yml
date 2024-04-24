@@ -44,7 +44,6 @@ jobs:
           cd book-network
           ./mvnw clean test
   build:
-    runs-on: self-hosted
     name: Build backend
     needs: [compile, unit-tests]
     steps:
