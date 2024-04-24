@@ -4,6 +4,10 @@ on:
  push:
     branches:
       - main
+    paths:
+      - 'ng/**'
+      - './ng/**'
+      - '../ng/**'
 
 jobs:
  build:
