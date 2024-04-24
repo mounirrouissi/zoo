@@ -44,7 +44,8 @@ jobs:
         with:
           java-version: '17'
           distribution: 'corretto'
-
+      - name: Make mvnw executable
+        run: chmod +x ./mvnw
       - name: Running Unit Tests
         run: |
           cd ng
