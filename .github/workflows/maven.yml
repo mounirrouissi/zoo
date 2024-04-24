@@ -45,7 +45,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+        with:
+          context: ng
+          file: ng/Dockerfile
+          push: true
+          platforms: linux/amd64
       - name: Build & Push to DockerHub
         uses: docker/build-push-action@v5
     
